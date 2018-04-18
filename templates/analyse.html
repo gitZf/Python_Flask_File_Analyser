@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block thebody %}
+
+    <h2>{{title}}</h2>
+    <p> <a href='/'><button>Chose another file</button></a> || <a href='/previous'><button>Previous analysis</button></a></p>
+    <p>Analysis : The file {{name}} analysed first time</p>
+	<form action='/reprintOrder' method='post'>
+        <select class="dropMenu" name='name'>
+             {% for name in prev %}
+				
+                    <option value={{name}}>{{name}}</option>
+				
+            {% endfor %}
+         </select>
+        <input type='submit' value='Show analysis'>
+    </form>
+        {% for key in o %}
+            <p>{{ key }} {{ o[key] }}</p>
+        {% endfor %}
+
+        {% for key in c %}
+            <p>{{ key }} {{ c[key] }}</p>
+        {% endfor %}
+
+   <p> <a href='/'><button>Chose another file</button></a> || <a href='/previous'><button>Previous analysis</button></a></p>
+    <br>
+
+{% endblock %}

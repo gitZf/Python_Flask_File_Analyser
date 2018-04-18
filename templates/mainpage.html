@@ -1,0 +1,44 @@
+<script type="text/javascript">// <![CDATA[
+function myFunction() {
+    document.getElementById("loading").style.display = "none";
+}
+        function preloader(){
+            document.getElementById("loading").style.display = "block";
+            document.getElementById("content").style.display = "block";
+        }//preloader
+        window.onload = preloader;
+// ]]></script>
+{% extends "base.html" %}
+
+{% block thebody %}
+
+    <h2>{{title}}</h2>
+
+        <p>
+        File format allowed : .txt , .PDF , .docx , .json. 
+        </p>
+		<p>The file must be encoded. None encoded files can NOT analysed!</p>
+        <form method=post action='/analyse' enctype=multipart/form-data>
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+			<ul class=flashes>
+			{% for message in messages %}
+			  <li>{{ message }}</li>
+			{% endfor %}
+			</ul>
+		  {% endif %}
+		{% endwith %}
+            <ul>
+                <li>First chose a file from your coumputer
+                 <p><input type=file name=file></p>
+                <p class="error">{{analyse}}</p>
+                <li>Then upload file to analyse
+                <p><input type=submit value=Upload onclick=preloader()></p>
+            </ul>
+
+        </form>
+
+    <a href='/previous'><button>Previous</button></a>
+	<div id="loading"><h1>Analysing document please wait !!!</h1></div>
+	
+{% endblock %}

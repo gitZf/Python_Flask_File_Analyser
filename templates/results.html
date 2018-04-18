@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block thebody %}
+    <h2>{{title}}</h2>
+
+    <h4>File uploaded to analyse : {{ filename }}</h4>
+
+
+        <p>If you want to choose another file </p>
+        <a href='/'><button>Chose another file</button></a>
+        <br>
+        <p>
+            File name : {{ filename }}
+        </p>
+        <a href='/analyse'><button>Analyse file</button></a>
+
+
+    {% block theresults %}
+    {% endblock %}
+
+{% endblock %}
+

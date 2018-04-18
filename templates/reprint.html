@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block thebody %}
+    <h2>{{title}}</h2>
+    <h2>{{n}}</h2>
+	<p>Order by : </p>
+	 <form action='/reprintOrder' method='post'>
+        <select class="dropMenu" name='order'>
+             {% for name in prev %}
+				
+                    <option value={{name}}>{{name}}</option>
+				
+            {% endfor %}
+         </select>
+        <input type='submit' value='Show analysis'>
+    </form>
+    <p><a href='/previous'><button>Previous</button></a> ||  <a href='/mainpage'><button>Main menu</button></a></p>
+		{% for key in fileList %}
+            <p>{{ key }}</p>
+        {% endfor %}
+    <p><a href='/previous'><button>Previous</button></a> ||  <a href='/mainpage'><button>Main menu</button></a></p>
+
+
+
+{% endblock %}

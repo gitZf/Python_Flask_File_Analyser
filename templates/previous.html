@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block thebody %}
+    <h2>{{title}}</h2>
+    
+    <p>
+    Select from previous analysis
+    </p>
+
+
+    <form action='/reprint' method='post'>
+        <select class="dropMenu" name='name'>
+            {% for tuple in prev %}
+					 <option value={{tuple[1]}}>{{tuple[0]}}</option>
+			{% endfor %}
+         </select>
+        <input type='submit' value='Show analysis'>
+    </form>
+
+    <p>
+    <a href='/'><button>Main page</button></a>
+    </p>
+
+    
+    
+{% endblock %}

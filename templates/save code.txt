@@ -1,0 +1,70 @@
+ """print(key, 'corresponds to', value)
+            if len(value)>50:
+                back = value
+                #print(back,'-> back value')
+            else:
+                front = value
+                #print(front,'-> front value')
+            i += 1
+        if i == 2:
+            dict ={ front : back }
+            print(back,'-> back value')
+            print(front,'-> front value')
+            filedict[front] = back
+            i = 0"""
+    print(type(filedict))
+    print(len(filedict))
+    if len(filedict) == 0:
+        print('EMPTYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY')
+        dict ={ 'Empty database' : 0 }
+        filedict[front] = back
+        print(back)
+        print(len(filedict))
+		
+for k in cursor:
+        i = 0
+        #print(k, '---->  k should be dict')
+        for key, value in k.items():
+            #dict = {key : value}
+            #filedict.append(dict)
+            print(key, 'corresponds to', value)
+            if len(value)>50:
+                back = value
+                dict ={ front : back }
+                filedict.append(dict)
+                #print(back,'-> back value')
+            else:
+                front = value
+                #print(front,'-> front value')
+       # if i == 2:
+       #     dict ={ front : back }
+       #     print(back,'-> back value')
+       #     print(front,'-> front value')
+       #     #filedict[front] = back
+       #     filedict.append(dict)
+       #     i = 0
+	   
+	 {% for dict_item in prev %}
+				{% for key, value in dict_item.items() %}
+					 <option value={{value}}>{{key}}</option>
+				{% endfor %}
+			{% endfor %}  
+
+	   
+	   
+	   
+	   {% for name in prev %}
+				
+                    <option value={{name}}>{{name}}</option>
+				
+            {% endfor %}
+			
+			
+			
+			
+			
+			{% for name in prev %}
+				
+                    <option value={{prev[name]}}>{{name}}</option>
+				
+            {% endfor %}

@@ -1,0 +1,38 @@
+body {
+  font-family:      Verdana, Geneva, Arial, sans-serif;
+  font-size:        medium;
+  background-color: tan;
+  margin-top:       5%;
+  margin-bottom:    5%;
+  margin-left:      10%;
+  margin-right:     10%;
+  padding:          10px 10px 10px 10px;
+}
+.error{
+    color: red;
+}
+
+.dropMenu{
+width: 170px;
+height: 28px;
+}
+
+h2 {
+  font-size:        150%;
+}
+
+#content {
+    display: none;
+    }
+ 
+#loading {
+    top: 200 px;
+    margin: auto;
+    position: absolute;
+    z-index: 1000;
+    width: 800px;
+    height: 24px;
+    cursor: wait;
+    }
+
+
